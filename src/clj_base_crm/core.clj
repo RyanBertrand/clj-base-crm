@@ -1,13 +1,14 @@
 (ns clj-base-crm.core
+  (:refer-clojure :exclude [update])
   (:require [clj-http.client :as http]
             [clojure.tools.logging :as log]))
 
 ;API Docs: https://developers.getbase.com/docs/rest/articles/first_call
 
-(def base-url "https://api.getbase.com")
+(def ^:no-doc base-url "https://api.getbase.com")
 
 ;Base CRM API Token
-(def ^:dynamic *access-token* "YOUR_BASE_PAT_ACCESS_TOKEN")
+(def ^:no-doc ^:dynamic *access-token* "YOUR_BASE_PAT_ACCESS_TOKEN")
 
 (defn set-access-token!
   "Set the Access Token to be used by default on all requests."
@@ -21,7 +22,7 @@
   `(binding [*access-token* ~token]
      (do ~@body)))
 
-(defn send-request!
+(defn ^:no-doc send-request!
   "Sends a http request with formatted params"
   [method partial-url & opts]
   (let [opts (into {} opts)
@@ -29,11 +30,11 @@
         req (merge {:url                   url
                     :method                method
                     :oauth-token           *access-token*
-                    :headers {:accept "application/json"}
+                    :headers               {:accept "application/json"}
                     :coerce                :always
                     :as                    :json
                     :throw-entire-message? true
-                    :content-type :json} opts)
+                    :content-type          :json} opts)
         {:keys [body] :as response} (http/request req)
         _ (println response)]
     (if body
@@ -52,9 +53,9 @@
 (defn upsert-filters
   "Transform custom-field filters to be query-param friendly"
   [filters]
-  (if-let [custom-fields (get filters :custom-fields)]
+  (if-let [custom-fields (get filters :custom_fields)]
     ;Transform the custom-fields into query-params
-    (merge (dissoc filters :custom-fields)
+    (merge (dissoc filters :custom_fields)
            (custom-fields->query-params custom-fields))
     filters))
 
@@ -78,13 +79,13 @@
   "Base to create a new record"
   [partial-url data]
   (send-request! :post partial-url
-                 {:form-params  {:data data}}))
+                 {:form-params {:data data}}))
 
 (defn update
   "Base to update a record"
   [partial-url data]
   (send-request! :put partial-url
-                 {:form-params  {:data data}}))
+                 {:form-params {:data data}}))
 
 (defn delete
   "Base to delete an existing record"

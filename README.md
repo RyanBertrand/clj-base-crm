@@ -62,6 +62,12 @@ This will upsert based on the email filter `john.doe@fakemail.com`.
                    {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
 ```
 
+This will upsert based on the custom field filter `external_id` `123`.
+```clj
+(base-leads/upsert {:custom_fields {:external_id 123}}
+                   {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
+```
+
 ## Return values
 
 clj-base-crm returns the data received from the Base CRM API unaltered but the response will be converted from json to a Clojure map.
