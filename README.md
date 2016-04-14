@@ -22,7 +22,7 @@ Require the Base resource you would like to interact with in the normal way:
 (require '[clj-base-crm.leads :as base-leads])
 ```
 
-Setup your Base Personal Access Tokens (PAT) ([Don't have one? Read this](https://developers.getbase.com/docs/rest/articles/first_call).
+Setup your Base Personal Access Tokens (PAT) [Don't have one? Read this](https://developers.getbase.com/docs/rest/articles/first_call).
 
 ```clj
 (clj-base-crm/set-access-token! "YOUR_BASE_PAT_ACCESS_TOKEN")
@@ -58,7 +58,8 @@ To upsert a lead by it's ID, use the `upsert` function.
 
 This will upsert based on the email filter `john.doe@fakemail.com`.
 ```clj
-(base-leads/upsert {:email "john.doe@fakemail.com"} {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
+(base-leads/upsert {:email "john.doe@fakemail.com"}
+                   {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
 ```
 
 ## Return values
