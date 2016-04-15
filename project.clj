@@ -1,4 +1,4 @@
-(defproject clj-base-crm "0.2.0"
+(defproject clj-base-crm "0.2.1"
   :description "Simple library to interact with the Base CRM API."
   :url "https://github.com/RyanBertrand/clj-base-crm"
   :license {:name "Eclipse Public License"
