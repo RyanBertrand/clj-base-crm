@@ -1,4 +1,4 @@
-(defproject clj-base-crm "0.1.0"
+(defproject clj-base-crm "0.2.0"
   :description "Simple library to interact with the Base CRM API."
   :url "https://github.com/RyanBertrand/clj-base-crm"
   :license {:name "Eclipse Public License"
@@ -14,7 +14,8 @@
                  ;Logging
                  [org.clojure/tools.logging "0.3.1"]]
   :plugins [[lein-codox "0.9.4"]]
-  :codox {:output-path "doc"}
+  :codox {:output-path "doc"
+          :metadata {:doc/format :markdown}}
   :deploy-repositories [["clojars" {:sign-releases false}]]
   :lein-release {:deploy-via :clojars}
   :profiles {:uberjar {:aot :all}})
