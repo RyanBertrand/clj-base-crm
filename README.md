@@ -14,6 +14,11 @@ Add the following to your project.clj dependencies:
 [clj-base-crm "0.2.0"]
 ```
 
+## Documentation
+
+[API Docs](http://ryanbertrand.github.io/clj-base-crm/clj-base-crm.core.html)
+
+
 ## Usage
 
 Require the `clj-base-crm.core` in your namespace:
@@ -89,7 +94,6 @@ clj-base-crm only exposes Leads and Contacts.  I plan to add more as I need them
 
 - Support more Base resources
 - Tests
-- Documentation
 
 ## License
 

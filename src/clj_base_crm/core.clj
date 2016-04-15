@@ -77,6 +77,7 @@
   "Retrieve a single resource record.
 
    ##resource-ids
+
     `{:id 12345}` - Endpoints with no resource associations [(e.g. Leads)](https://developers.getbase.com/docs/rest/reference/leads)
     `{:deal_id 123 :contact_id 456}` - Endpoints with associations to other resources. [(e.g. Associated Contacts)](https://developers.getbase.com/docs/rest/reference/associated_contacts)
 
@@ -90,6 +91,7 @@
    filter the records which record to retreive.
 
    ##resource-ids
+
     `{:id 12345}` - Endpoints with no resource associations [(e.g. Leads)](https://developers.getbase.com/docs/rest/reference/leads)
     `{:deal_id 123 :contact_id 456}` - Endpoints with associations to other resources. [(e.g. Associated Contacts)](https://developers.getbase.com/docs/rest/reference/associated_contacts)
 
@@ -112,6 +114,7 @@
    You should use the arity with resource-ids when the resource you are creating has an association to another resource. [(e.g. Associated Contacts)](https://developers.getbase.com/docs/rest/reference/associated_contacts)
 
    ##resource-ids
+
     `{:deal_id 123}` - Endpoints with associations to other resources. [(e.g. Associated Contacts)](https://developers.getbase.com/docs/rest/reference/associated_contacts)
 
     [The resource-ids map to the Base API Endpoints](https://developers.getbase.com/docs/rest/articles/introduction)"
@@ -129,6 +132,7 @@
   "Deletes an existing resource record.
 
    ##resource-ids
+
     `{:id 12345}` - Endpoints with no resource associations [(e.g. Leads)](https://developers.getbase.com/docs/rest/reference/leads)
     `{:deal_id 123 :contact_id 456}` - Endpoints with associations to other resources. [(e.g. Associated Contacts)](https://developers.getbase.com/docs/rest/reference/associated_contacts)
 
@@ -141,6 +145,7 @@
   "Updates an existing resource record.
 
    ##resource-ids
+
     `{:id 12345}` - Endpoints with no resource associations [(e.g. Leads)](https://developers.getbase.com/docs/rest/reference/leads)
     `{:deal_id 123 :contact_id 456}` - Endpoints with associations to other resources. [(e.g. Associated Contacts)](https://developers.getbase.com/docs/rest/reference/associated_contacts)
 
@@ -161,6 +166,7 @@
   - If no record matches the query, a new record is created.
 
   ##filters
+
   `{:email \"john.doe@fakemail.com\"}` - Filters by email
   `{:custom_fields {:external_id 123}}` - Filters by the custom field 'external_id'"
   [resource {:keys [data filters]}]
