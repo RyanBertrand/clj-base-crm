@@ -35,9 +35,10 @@ Setup your Base Personal Access Tokens (PAT) [Don't have one? Read this](https:/
 
 clj-base-crm only supports the following resources:
 
-`::base/leads`
-
-`::base/contacts`
+```clj
+::base/leads
+::base/contacts
+```
 
 To create a new lead, use the `create` function.
 
