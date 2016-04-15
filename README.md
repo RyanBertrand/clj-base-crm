@@ -30,8 +30,9 @@ Setup your Base Personal Access Tokens (PAT) [Don't have one? Read this](https:/
 
 clj-base-crm only supports the following resources:
 
-    - `::base/leads`
-    - `::base/contacts`
+`::base/leads`
+
+`::base/contacts`
 
 To create a new lead, use the `create` function.
 
@@ -49,13 +50,13 @@ To retrieve a new lead by it's ID, use the `retrieve` function.
 To update a lead by it's ID, use the `update` function.
 
 ```clj
-(base-leads/update ::base/leads {:id 1234} {:email "newemail@fakemail.com"})
+(base/update ::base/leads {:id 1234} {:email "newemail@fakemail.com"})
 ```
 
 To delete a lead by it's ID, use the `delete` function.
 
 ```clj
-(base-leads/delete ::base/leads  {:id 1234})
+(base/delete ::base/leads  {:id 1234})
 ```
 
 Sometimes you need to create a lead but you are not sure if this lead is already in the system. Base provides an upsert action which will create a new lead or update an existing lead based on the filters you pass in.
@@ -63,16 +64,16 @@ To upsert a lead by it's ID, use the `upsert` function.
 
 This will upsert based on the email filter `john.doe@fakemail.com`.
 ```clj
-(base-leads/upsert ::base/leads
-                   {:email "john.doe@fakemail.com"}
-                   {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
+(base/upsert ::base/leads
+             {:email "john.doe@fakemail.com"}
+             {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
 ```
 
 This will upsert based on the custom field filter `external_id` `123`.
 ```clj
-(base-leads/upsert ::base/leads
-                   {:custom_fields {:external_id 123}}
-                   {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
+(base/upsert ::base/leads
+             {:custom_fields {:external_id 123}}
+             {:first_name "John" :last_name "Doe" :phone "916-456-7890"})
 ```
 
 ## Return values
