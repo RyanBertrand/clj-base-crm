@@ -72,7 +72,8 @@
   ;Feel free to submit a PR!  :)
   {::leads ["/v2/leads" "/v2/leads/:id"]
    ::contacts ["/v2/contacts" "/v2/contacts/:id"]
-   ::lead-sources ["/v2/lead_sources" "/v2/lead_sources/:id"]})
+   ::lead-sources ["/v2/lead_sources" "/v2/lead_sources/:id"]
+   ::notes ["/v2/notes" "/v2/notes/:id"]})
 
 (defn retrieve
   "Retrieve a single resource record.

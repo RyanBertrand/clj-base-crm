@@ -39,6 +39,7 @@ clj-base-crm only supports the following resources:
 ::base/leads
 ::base/lead-sources
 ::base/contacts
+::base/notes
 ```
 
 To create a new lead, use the `create` function.
@@ -92,7 +93,7 @@ clj-base-crm returns the data received from the Base CRM API unaltered but the r
 clj-base-crm does not throw exceptions on exceptional status codes from the Base API.  It returns the error body.
 
 ##Todo
-clj-base-crm only exposes Leads, Lead Sources, and Contacts.  I plan to add more as I need them.  If you would like to expose more (just a simple hash-map), feel free to submit a PR!
+clj-base-crm only exposes a few resources.  I plan to add more as I need them.  If you would like to expose more (just a simple hash-map), feel free to submit a PR!
 
 - Support more Base resources
 - Tests
